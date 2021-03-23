@@ -20,6 +20,12 @@ export default {
       return basketService.calculateTotal(basketItems);
     },
 
+    basketTotalFixedPrice({ basketItems }) {
+      return basketItems.reduce((acc, cartItem) => {
+        return cartItem.quantity * cartItem.price + acc;
+      }, 0);
+    },
+
     basketQuantity: (state) => {
       return state.basketItems.reduce((acc, { quantity }) => {
         return quantity + acc;

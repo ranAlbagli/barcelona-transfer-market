@@ -12,14 +12,11 @@
         <img height="255" width="250" :src="product.avatar" alt="" />
         <v-card-title> price: {{ product.price }}$</v-card-title>
         <v-card-text>
-          <v-chip-group>
-            <v-chip
-              v-for="sale in product.sales"
-              active-class="deep-purple accent-4 white--text"
-              :key="sale"
-              >{{ sale }}</v-chip
-            >
-          </v-chip-group>
+          <template v-for="sale in product.sales">
+            <v-chip :key="sale" color="blue" outlined>
+              {{ salasMap[sale] }}
+            </v-chip>
+          </template>
         </v-card-text>
         <v-card-actions>
           <v-btn
@@ -40,6 +37,7 @@
 </template>
 
 <script>
+import basketService from "../../utils/basket.service";
 export default {
   name: "ProductPreview",
   props: {
@@ -50,7 +48,7 @@ export default {
   },
   data() {
     return {
-      image: require("@/assets/players-images/MESSI.png"),
+      salasMap: basketService.salasMap,
     };
   },
   methods: {

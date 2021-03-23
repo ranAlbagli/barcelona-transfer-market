@@ -16,9 +16,9 @@
             hide-default-footer
           >
             <template v-slot:item.title="{ item }">
-              <td>
+              <td class="d-flex">
                 <img width="80" height="80" :src="item.avatar" alt="" />
-                <span>{{ item.title }}</span>
+                <strong class="ml-3 align-self-center">{{ item.title }}</strong>
               </td>
             </template>
             <template v-slot:item.quantity="{ item }">
@@ -41,10 +41,13 @@
             </template>
           </v-data-table>
           <v-layout row justify-space-between class="mt-16">
-            <router-link to="/"> Continue shopping</router-link>
+            <div class="d-flex align-end pl-3">
+              <v-btn @click="navigateToHome"> Continue shopping </v-btn>
+            </div>
             <div class="d-flex flex-column">
-              <v-card-title> Basket Subtotal: </v-card-title>
+              <v-card-title class="pl-0 pb-1"> Basket Subtotal: </v-card-title>
               <h1>{{ basketTotal }} $</h1>
+              <h5>You saved: {{ moneySaved }}$</h5>
               <v-btn x-large color="primary">checkout</v-btn>
             </div>
           </v-layout>
@@ -97,7 +100,15 @@ export default {
     this.$store.dispatch("basket/getBasketItems");
   },
   computed: {
-    ...mapGetters("basket", ["basketItems", "basketTotal", "basketQuantity"]),
+    ...mapGetters("basket", [
+      "basketItems",
+      "basketTotal",
+      "basketQuantity",
+      "basketTotalFixedPrice",
+    ]),
+    moneySaved() {
+      return this.basketTotalFixedPrice - this.basketTotal;
+    },
   },
   methods: {
     navigateToHome() {

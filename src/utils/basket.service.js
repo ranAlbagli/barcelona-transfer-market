@@ -1,9 +1,3 @@
-// const salasMap = {
-//   1: "3 for 100$",
-//   2: "second at 50%",
-//   3: "buy 1 get one free"
-//  };
-
 // const calculateTotal = (basketItems) => {
 //   return basketItems.reduce((acc, product) => {
 //     if (product.sales && product.sales.includes(1) && product.quantity >= 3) {
@@ -49,8 +43,15 @@ const calculateTotal = (basketItems) => {
   }, 0);
 };
 
+const salasMap = {
+  1: "3 for 100$",
+  2: "second at 50%",
+  3: "buy 1 get one free",
+};
+
 const basketService = {
   calculateTotal,
+  salasMap,
 };
 
 export default basketService;
