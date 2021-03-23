@@ -1,5 +1,5 @@
 <template>
-  <v-container class="my-5">
+  <v-container class="my-10">
     <product-list />
   </v-container>
 </template>
@@ -12,5 +12,3 @@ export default {
   methods: {},
 };
 </script>
-
-<style scoped></style>

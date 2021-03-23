@@ -1,9 +1,6 @@
 import { basket } from "../data/basket";
 
-const get = () => {
-  console.log({ basket });
-  return Promise.resolve(basket);
-};
+const get = () => Promise.resolve(basket);
 
 const create = (product) => {
   basket.push(product);

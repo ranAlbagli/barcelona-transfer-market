@@ -1,5 +1,7 @@
 <template>
-  <basket-list />
+  <v-container class="my-10">
+    <basket-list />
+  </v-container>
 </template>
 
 <script>

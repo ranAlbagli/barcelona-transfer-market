@@ -14,7 +14,7 @@
         <v-card-text>
           <template v-for="sale in product.sales">
             <v-chip :key="sale" color="blue" outlined>
-              {{ salasMap[sale] }}
+              {{ salasMap[sale].title }}
             </v-chip>
           </template>
         </v-card-text>
