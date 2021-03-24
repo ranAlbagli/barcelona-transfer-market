@@ -6,7 +6,7 @@ export default {
     productItems: [],
   },
   mutations: {
-    updateProductItems(state, payload) {
+    UPDATE_PRODUCT_ITEMS(state, payload) {
       state.productItems = payload;
     },
   },
@@ -16,13 +16,13 @@ export default {
   actions: {
     getProductItems({ commit }) {
       productsApi
-        .get()
-        .then((products) => commit("updateProductItems", products));
+        .list()
+        .then((products) => commit("UPDATE_PRODUCT_ITEMS", products));
     },
     updateProductsItems({ commit }, product) {
       productsApi
         .update(product)
-        .then((products) => commit("updateProductItems", products));
+        .then((products) => commit("UPDATE_PRODUCT_ITEMS", products));
     },
   },
 };

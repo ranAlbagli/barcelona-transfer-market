@@ -7,7 +7,7 @@ export default {
     basketItems: [],
   },
   mutations: {
-    updateBasketItems(state, payload) {
+    UPDATE_BASKET_ITEMS(state, payload) {
       state.basketItems = payload;
     },
   },
@@ -35,19 +35,19 @@ export default {
 
   actions: {
     getBasketItems({ commit }) {
-      basketApi.get().then((basket) => commit("updateBasketItems", basket));
+      basketApi.get().then((basket) => commit("UPDATE_BASKET_ITEMS", basket));
     },
 
     addToBasket({ commit }, payload) {
       basketApi
         .create(payload)
-        .then((basket) => commit("updateBasketItems", basket));
+        .then((basket) => commit("UPDATE_BASKET_ITEMS", basket));
     },
 
     removeFromBasket({ commit }, payload) {
       basketApi
         .remove(payload)
-        .then((basket) => commit("updateBasketItems", basket));
+        .then((basket) => commit("UPDATE_BASKET_ITEMS", basket));
     },
   },
 };

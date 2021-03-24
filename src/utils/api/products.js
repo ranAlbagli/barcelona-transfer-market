@@ -1,6 +1,6 @@
 import { products } from "../data/products";
 
-const get = () => {
+const list = () => {
   return Promise.resolve(products);
 };
 
@@ -11,7 +11,7 @@ const update = (product) => {
 };
 
 const productsApi = {
-  get,
+  list,
   update,
 };
 
