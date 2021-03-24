@@ -63,7 +63,11 @@
               <v-card-title class="pl-0 pb-1"> Basket Subtotal: </v-card-title>
               <h1>${{ basketTotal }}</h1>
               <h5>You saved: ${{ moneySaved }}</h5>
-              <v-btn x-large color="#004D98" class="white--text"
+              <v-btn
+                @click="showCheckoutDialog = true"
+                x-large
+                color="#004D98"
+                class="white--text"
                 >checkout</v-btn
               >
             </div>
@@ -71,15 +75,18 @@
         </v-card-text>
       </v-card>
     </template>
+    <checkout-dialog v-model="showCheckoutDialog" />
   </v-container>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import basketService from "@/utils/basket.service";
+import CheckoutDialog from "@/components/CheckoutDialog";
 
 export default {
   name: "BasketList",
+  components: { CheckoutDialog },
   data() {
     return {
       headers: [
@@ -113,6 +120,7 @@ export default {
         },
       ],
       salasMap: basketService.salasMap,
+      showCheckoutDialog: false,
     };
   },
   created() {
