@@ -20,7 +20,7 @@
           >
             <template v-slot:item.title="{ item }">
               <td class="d-flex">
-                <v-img width="1.5" :src="item.avatar" alt="" />
+                <v-img width="1.5" :src="item.avatar" />
               </td>
             </template>
             <template v-slot:item.price="{ item }">
@@ -33,20 +33,15 @@
                   type="number"
                   min="1"
                 />
-              </td>
-            </template>
-            <template v-slot:item.sales="{ item }">
-              <td>
                 <template v-for="sale in item.sales">
-                  <v-chip
-                    x-small
-                    class="ma-0"
-                    :key="sale"
-                    color="blue"
-                    outlined
-                  >
-                    {{ salasMap[sale].title }}
-                  </v-chip>
+                  <v-tooltip :key="sale" bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon v-bind="attrs" v-on="on" color="#004D98">
+                        mdi-tag
+                      </v-icon>
+                    </template>
+                    <span>{{ salasMap[sale].title }}</span>
+                  </v-tooltip>
                 </template>
               </td>
             </template>
@@ -101,11 +96,6 @@ export default {
         {
           text: "Quantity",
           value: "quantity",
-          sortable: false,
-        },
-        {
-          text: "Sales",
-          value: "sales",
           sortable: false,
         },
         {

@@ -35,7 +35,7 @@ export default {
 
   actions: {
     getBasketItems({ commit }) {
-      basketApi.get().then((basket) => commit("UPDATE_BASKET_ITEMS", basket));
+      basketApi.list().then((basket) => commit("UPDATE_BASKET_ITEMS", basket));
     },
 
     addToBasket({ commit }, payload) {

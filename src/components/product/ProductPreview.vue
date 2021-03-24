@@ -19,7 +19,7 @@
           <v-img width="250" :src="product.avatar">
             <v-expand-transition>
               <div
-                v-if="hover"
+                v-if="hover || product.isInBasket"
                 class="d-flex transition-fast-in-fast-out v-card--reveal display-3 white--text"
                 style="height: 100%; background: rgba(0, 0, 0, 0.3)"
               >

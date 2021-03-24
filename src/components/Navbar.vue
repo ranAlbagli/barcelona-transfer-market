@@ -8,7 +8,6 @@
     <v-tab to="/">Store</v-tab>
     <v-tab to="/basket">
       <v-badge
-        bordered
         :value="basketQuantity"
         :content="basketQuantity"
         color="green lighten-2"

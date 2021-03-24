@@ -1,6 +1,6 @@
 import { basket } from "../data/basket";
 
-const get = () => Promise.resolve(basket);
+const list = () => Promise.resolve(basket);
 
 const create = (product) => {
   basket.push(product);
@@ -14,7 +14,7 @@ const remove = (product) => {
 };
 
 const basketApi = {
-  get,
+  list,
   create,
   remove,
 };

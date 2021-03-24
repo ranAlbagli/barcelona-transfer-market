@@ -1,5 +1,11 @@
 import playersAvatars from "@/assets";
 
+// ***********************************************************************************
+// @ in order To add a product to be on sale,
+// you must add to the 'product' object an array called 'sales' with one of the following strings:
+// ["THREE_FOR_100$", "SECOND_AT_50%", "BUY_ONE_GET_ONE_FREE"]
+// ***********************************************************************************
+
 export const products = [
   {
     id: 1,
