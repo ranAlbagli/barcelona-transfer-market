@@ -1,8 +1,8 @@
 <template>
   <v-app-bar app dark color="primary darken-3">
     <v-tab>
-      <v-img width="60" src="../assets/players-avatars/MESSI.png" />
-      Barcelona Transfer Market
+      <v-img width="50" src="../assets/Barcelona-Logo-PNG3.png" />
+      <span class="pl-3">Barcelona Transfer Market</span>
     </v-tab>
     <v-spacer></v-spacer>
     <v-tab to="/">Store</v-tab>

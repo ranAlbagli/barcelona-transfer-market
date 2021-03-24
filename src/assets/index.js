@@ -15,6 +15,7 @@ import coutinho from "./players-avatars/COUTINHO.png";
 import trincao from "./players-avatars/TRINCÃO.png";
 import lenglet from "./players-avatars/LENGLET.png";
 import dest from "./players-avatars/DEST.png";
+import logo from "./Barcelona-Logo-PNG3.png";
 
 const playersAvatars = {
   messi,
@@ -34,6 +35,7 @@ const playersAvatars = {
   coutinho,
   trincao,
   lenglet,
+  logo,
 };
 
 export default playersAvatars;

@@ -21,6 +21,9 @@
                 <strong class="ml-3 align-self-center">{{ item.title }}</strong>
               </td>
             </template>
+            <template v-slot:item.price="{ item }">
+              <td>${{ item.price }}</td>
+            </template>
             <template v-slot:item.quantity="{ item }">
               <td>
                 <v-text-field
@@ -30,6 +33,21 @@
                 />
               </td>
             </template>
+            <!--            <template v-slot:item.sales="{ item }">-->
+            <!--              <td>-->
+            <!--                <template v-for="sale in item.sales">-->
+            <!--                  <v-chip-->
+            <!--                    x-small-->
+            <!--                    class="ma-0"-->
+            <!--                    :key="sale"-->
+            <!--                    color="blue"-->
+            <!--                    outlined-->
+            <!--                  >-->
+            <!--                    {{ salasMap[sale].title }}-->
+            <!--                  </v-chip>-->
+            <!--                </template>-->
+            <!--              </td>-->
+            <!--            </template>-->
             <template v-slot:item.actions="{ item }">
               <td>
                 <span v-for="(action, index) in dataTableActions" :key="index">
@@ -59,6 +77,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import basketService from "@/utils/basket.service";
 
 export default {
   name: "BasketList",
@@ -80,6 +99,11 @@ export default {
           value: "quantity",
           sortable: false,
         },
+        // {
+        //   text: "Sales",
+        //   value: "sales",
+        //   sortable: false,
+        // },
         {
           text: "Actions",
           value: "actions",
@@ -94,6 +118,7 @@ export default {
           click: this.removeFromBasket,
         },
       ],
+      salasMap: basketService.salasMap,
     };
   },
   created() {
