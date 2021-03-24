@@ -1,8 +1,11 @@
 <template>
-  <v-app-bar fixed class="mb-16">
-    <v-tab>Barcelona sell off</v-tab>
+  <v-app-bar app dark color="primary darken-3">
+    <v-tab>
+      <v-img width="60" src="../assets/players-avatars/MESSI.png" />
+      Barcelona Transfer Market
+    </v-tab>
     <v-spacer></v-spacer>
-    <v-tab to="/"> Inventory</v-tab>
+    <v-tab to="/">Store</v-tab>
     <v-tab to="/basket">
       <v-badge
         bordered

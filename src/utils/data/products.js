@@ -7,7 +7,7 @@ export const products = [
     avatar: playersAvatars.messi,
     price: 1000,
     quantity: 1,
-    sales: ["BUY_ONE_GET_ONE_FREE", "THREE_FOR_100$", "SECOND_AT_50%"],
+    sales: ["THREE_FOR_100$"],
   },
   {
     id: 2,
@@ -15,6 +15,7 @@ export const products = [
     avatar: playersAvatars.alba,
     price: 70,
     quantity: 1,
+    sales: ["THREE_FOR_100$"],
   },
   {
     id: 3,

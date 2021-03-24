@@ -17,7 +17,7 @@
           >
             <template v-slot:item.title="{ item }">
               <td class="d-flex">
-                <img width="80" height="80" :src="item.avatar" alt="" />
+                <v-img width="1.5" :src="item.avatar" alt="" />
                 <strong class="ml-3 align-self-center">{{ item.title }}</strong>
               </td>
             </template>

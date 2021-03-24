@@ -1,6 +1,12 @@
 <template>
-  <v-flex sm-3>
-    <v-card elevation="24" shaped class="mx-auto my-12" max-width="250">
+  <v-flex class="my-5 mx-2">
+    <v-card
+      color="#f5f5f5"
+      elevation="4"
+      shaped
+      class="mx-auto fill-height"
+      max-width="250"
+    >
       <v-badge
         bordered
         left
@@ -9,16 +15,19 @@
         color="green lighten-2"
         :value="!!product.sales && !!product.sales.length"
       >
-        <img height="255" width="250" :src="product.avatar" alt="" />
-        <v-card-title> price: {{ product.price }}$</v-card-title>
-        <v-card-text>
+        <v-img width="250" :src="product.avatar" alt=""> </v-img>
+        <v-card-title>${{ product.price }}</v-card-title>
+
+        <v-card-text style="height: 70px">
           <template v-for="sale in product.sales">
             <v-chip :key="sale" color="blue" outlined>
               {{ salasMap[sale].title }}
             </v-chip>
           </template>
         </v-card-text>
+        <v-divider />
         <v-card-actions>
+          <v-spacer />
           <v-btn
             v-if="!product.isInBasket"
             @click="toggleBasket"
