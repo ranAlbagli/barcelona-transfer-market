@@ -1,54 +1,35 @@
 const calculateTotal = (basketItems) => {
   return basketItems.reduce((acc, product) => {
-    if (product.sales) {
-      const firstSalePrice = salasMap.THREE_FOR_100$.validate(product);
-      if (firstSalePrice) return acc + firstSalePrice;
-
-      const secondSalePrice = salasMap["SECOND_AT_50%"].validate(product);
-      if (secondSalePrice) return acc + secondSalePrice;
-
-      const ThirdSalePrice = salasMap.BUY_ONE_GET_ONE_FREE.validate(product);
-      if (ThirdSalePrice) return acc + ThirdSalePrice;
+    const { price, quantity, saleId } = product;
+    if (saleId) {
+      const salePrice = salasMap[saleId].getPrice(product);
+      return acc + salePrice;
     }
-    return acc + product.price * product.quantity;
+    return acc + price * quantity;
   }, 0);
 };
 
 const salasMap = {
-  THREE_FOR_100$: {
+  1: {
     title: "3 for 100$",
-    validate: function (product) {
-      if (
-        product.sales.includes("THREE_FOR_100$") &&
-        product.quantity >= 3 &&
-        product.quantity % 3 === 0
-      )
-        return (product.quantity / 3) * 100;
-      return 0;
+    getPrice: function ({ price, quantity }) {
+      return (quantity % 3) * price + ((quantity - (quantity % 3)) / 3) * 100;
     },
   },
-  "SECOND_AT_50%": {
+  2: {
     title: "Second at 50%",
-    validate: function (product) {
-      if (
-        product.sales.includes("SECOND_AT_50%") &&
-        product.quantity >= 2 &&
-        product.quantity % 2 === 0
-      )
-        return (product.quantity / 2) * product.price * 1.5;
-      return 0;
+    getPrice: function ({ price, quantity }) {
+      const fixedPrice = price * quantity;
+      const discount = Math.floor(quantity / 2) * 0.5 * price;
+      return fixedPrice - discount;
     },
   },
-  BUY_ONE_GET_ONE_FREE: {
+  3: {
     title: "Buy one get one free",
-    validate: function (product) {
-      if (
-        product.sales.includes("BUY_ONE_GET_ONE_FREE") &&
-        product.quantity >= 1 &&
-        product.quantity % 2 === 0
-      )
-        return product.quantity * product.price * 0.5;
-      return 0;
+    getPrice: function ({ price, quantity }) {
+      const fixedPrice = price * quantity;
+      const discount = Math.floor(quantity / 2) * price;
+      return fixedPrice - discount;
     },
   },
 };

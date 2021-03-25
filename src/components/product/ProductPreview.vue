@@ -14,7 +14,7 @@
           overlap
           content="sale"
           color="green lighten-2"
-          :value="!!product.sales && !!product.sales.length"
+          :value="!!product.saleId"
         >
           <v-img width="250" :src="product.avatar">
             <v-expand-transition>
@@ -38,11 +38,15 @@
           <v-card-title>${{ product.price }}</v-card-title>
 
           <v-card-text style="height: 70px">
-            <template v-for="sale in product.sales">
-              <v-chip small class="ma-1" :key="sale" color="blue" outlined>
-                {{ salasMap[sale].title }}
-              </v-chip>
-            </template>
+            <v-chip
+              v-if="product.saleId"
+              small
+              class="ma-1"
+              color="blue"
+              outlined
+            >
+              {{ salasMap[product.saleId].title }}
+            </v-chip>
           </v-card-text>
         </v-badge>
       </v-card>

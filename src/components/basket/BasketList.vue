@@ -33,14 +33,14 @@
                   type="number"
                   min="1"
                 />
-                <template v-for="sale in item.sales">
-                  <v-tooltip :key="sale" bottom>
+                <template v-if="item.saleId">
+                  <v-tooltip bottom>
                     <template v-slot:activator="{ on, attrs }">
                       <v-icon v-bind="attrs" v-on="on" color="#004D98">
                         mdi-tag
                       </v-icon>
                     </template>
-                    <span>{{ salasMap[sale].title }}</span>
+                    <span>{{ salasMap[item.saleId].title }}</span>
                   </v-tooltip>
                 </template>
               </td>

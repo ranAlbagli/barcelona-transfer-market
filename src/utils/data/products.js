@@ -2,8 +2,10 @@ import playersAvatars from "@/assets";
 
 // ***********************************************************************************
 // @ in order To add a product to be on sale,
-// you must add to the 'product' object an array called 'sales' with one of the following strings:
-// ["THREE_FOR_100$", "SECOND_AT_50%", "BUY_ONE_GET_ONE_FREE"]
+// you must add to the 'product' object a kay called 'saleId' with one of the following id's:
+// 1 - '3 for 100$'
+// 2 - 'Second at 50%'
+// 3 - 'Buy one get one free'
 // ***********************************************************************************
 
 export const products = [
@@ -13,7 +15,7 @@ export const products = [
     avatar: playersAvatars.messi,
     price: 1000,
     quantity: 1,
-    sales: ["SECOND_AT_50%"],
+    saleId: 1,
   },
   {
     id: 2,
@@ -21,7 +23,7 @@ export const products = [
     avatar: playersAvatars.alba,
     price: 70,
     quantity: 1,
-    sales: ["THREE_FOR_100$", "SECOND_AT_50%"],
+    saleId: 2,
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ export const products = [
     avatar: playersAvatars.araujo,
     price: 80,
     quantity: 1,
+    saleId: 3,
   },
   {
     id: 4,
@@ -36,7 +39,6 @@ export const products = [
     avatar: playersAvatars.deJong,
     price: 70,
     quantity: 1,
-    sales: ["BUY_ONE_GET_ONE_FREE"],
   },
   {
     id: 5,
@@ -44,7 +46,6 @@ export const products = [
     avatar: playersAvatars.griezmann,
     price: 60,
     quantity: 1,
-    sales: ["SECOND_AT_50%"],
   },
   {
     id: 6,
@@ -59,7 +60,6 @@ export const products = [
     avatar: playersAvatars.pedri,
     price: 90,
     quantity: 1,
-    sales: ["BUY_ONE_GET_ONE_FREE"],
   },
   {
     id: 8,
