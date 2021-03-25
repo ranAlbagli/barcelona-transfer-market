@@ -21,8 +21,8 @@ export default {
     },
 
     basketTotalFixedPrice({ basketItems }) {
-      return basketItems.reduce((acc, cartItem) => {
-        return cartItem.quantity * cartItem.price + acc;
+      return basketItems.reduce((acc, { quantity, price }) => {
+        return quantity * price + acc;
       }, 0);
     },
 
