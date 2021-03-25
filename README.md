@@ -4,9 +4,11 @@
  
    <ul>
          <li>
-          <h3> in order To add a product to be on sale,
-          you must add to the 'product' object an array called 'sales' with one of the following strings:
-          ["THREE_FOR_100$", "SECOND_AT_50%", "BUY_ONE_GET_ONE_FREE"] </h3>
+          <h3>// @ in order To add a product to be on sale,
+ you must add to the 'product' object a kay called 'saleId' with one of the following id's:
+ 1 - '3 for 100$'
+ 2 - 'Second at 50%'
+ 3 - 'Buy one get one free' </h3>
         </li>
    </ul>     
 
