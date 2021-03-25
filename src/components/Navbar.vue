@@ -1,12 +1,12 @@
 <template>
   <v-app-bar app dark color="#004D98">
-    <v-tab @click="scrollToTop">
+    <v-btn text @click="scrollToTop">
       <v-img width="50" src="../assets/Barcelona-Logo-PNG3.png" />
       <span class="pl-3">Barcelona Transfer Market</span>
-    </v-tab>
+    </v-btn>
     <v-spacer />
-    <v-tab to="/">Store</v-tab>
-    <v-tab to="/basket">
+    <v-btn class="mx-2" text to="/">Store</v-btn>
+    <v-btn to="/basket" icon>
       <v-badge
         :value="basketQuantity"
         :content="basketQuantity"
@@ -14,7 +14,7 @@
       >
         <v-icon>mdi-cart-outline</v-icon>
       </v-badge>
-    </v-tab>
+    </v-btn>
   </v-app-bar>
 </template>
 
