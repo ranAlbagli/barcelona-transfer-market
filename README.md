@@ -3,9 +3,6 @@
    <h1>demo: https://barcelona-transfer-market.netlify.app </h1>
  
    <ul>
-       <li>
-          <h3> the demo navbar ui is broken for some reason, for better results run the code locally. </h3>
-        </li>
          <li>
           <h3> in order To add a product to be on sale,
           you must add to the 'product' object an array called 'sales' with one of the following strings:
