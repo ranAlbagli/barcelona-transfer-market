@@ -1,5 +1,18 @@
 # liquidity-home-assignment
 
+   <h1>demo: https://barcelona-transfer-market.netlify.app </h1>
+ 
+   <ul>
+       <li>
+          <h3> Some of the images and some ui are broken in the demo, for better results run the code locally. </h3>
+        </li>
+         <li>
+          <h3> in order To add a product to be on sale,
+          you must add to the 'product' object an array called 'sales' with one of the following strings:
+          ["THREE_FOR_100$", "SECOND_AT_50%", "BUY_ONE_GET_ONE_FREE"] </h3>
+        </li>
+   </ul>     
+
 ## Project setup
 ```
 npm install
