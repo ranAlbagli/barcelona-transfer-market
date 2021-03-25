@@ -1,4 +1,4 @@
-# liquidity-home-assignment
+# barcelona-transfer-market
 
    <h1>demo: https://barcelona-transfer-market.netlify.app </h1>
  
