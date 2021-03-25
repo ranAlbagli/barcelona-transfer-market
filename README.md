@@ -4,7 +4,7 @@
  
    <ul>
        <li>
-          <h3> Some of the images and some ui are broken in the demo, for better results run the code locally. </h3>
+          <h3> the demo navbar ui is broken for some reason, for better results run the code locally. </h3>
         </li>
          <li>
           <h3> in order To add a product to be on sale,
