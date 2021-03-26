@@ -7,7 +7,6 @@ import griezmann from "./players-avatars/GRIEZMANN.png";
 import pedri from "./players-avatars/PEDRI.png";
 import pique from "./players-avatars/PIQUÉ.png";
 import terStegen from "./players-avatars/TER STEGEN.png";
-import puig from "./players-avatars/RIQUI PUIG.png";
 import braithwaite from "./players-avatars/BRAITHWAITE.png";
 import roberto from "./players-avatars/ROBERTO.png";
 import dembele from "./players-avatars/DEMBÉLÉ.png";
@@ -26,7 +25,6 @@ const playersAvatars = {
   pedri,
   pique,
   terStegen,
-  puig,
   dest,
   braithwaite,
   roberto,
