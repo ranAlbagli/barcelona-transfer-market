@@ -11,7 +11,7 @@ const calculateTotal = (basketItems) => {
 
 const salasMap = {
   1: {
-    title: "3 for 100$",
+    title: "3 for $100",
     getPrice: function ({ price, quantity }) {
       return (quantity % 3) * price + ((quantity - (quantity % 3)) / 3) * 100;
     },

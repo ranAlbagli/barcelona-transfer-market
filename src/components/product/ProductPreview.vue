@@ -12,11 +12,19 @@
           bordered
           left
           overlap
-          content="sale"
+          content="Sale"
           color="green lighten-2"
           :value="!!product.saleId"
         >
           <v-img width="250" :src="product.avatar">
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular
+                  indeterminate
+                  color="grey lighten-5"
+                ></v-progress-circular>
+              </v-row>
+            </template>
             <v-expand-transition>
               <div
                 v-if="hover || product.isInBasket"
