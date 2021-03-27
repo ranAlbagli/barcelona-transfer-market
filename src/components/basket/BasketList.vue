@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import basketService from "@/utils/basket.service";
 import CheckoutDialog from "@/components/CheckoutDialog";
 
@@ -116,7 +116,7 @@ export default {
           action: "remove",
           icon: "mdi-close-circle-outline",
           color: "black",
-          click: this.removeFromBasket,
+          click: this._removeFromBasket,
         },
       ],
       salasMap: basketService.salasMap,
@@ -138,17 +138,20 @@ export default {
     },
   },
   methods: {
+    ...mapActions("basket", ["removeFromBasket"]),
+    ...mapActions("product", ["updateProductsItems"]),
+
     navigateToHome() {
       this.$router.push("/");
     },
-    removeFromBasket(product) {
+    _removeFromBasket(product) {
       const removedProduct = {
         ...product,
         quantity: 1,
       };
 
-      this.$store.dispatch("basket/removeFromBasket", removedProduct);
-      this.$store.dispatch("product/updateProductsItems", removedProduct);
+      this.removeFromBasket(removedProduct);
+      this.updateProductsItems(removedProduct);
     },
   },
 };

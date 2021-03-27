@@ -64,6 +64,7 @@
 
 <script>
 import basketService from "../../utils/basket.service";
+import { mapActions } from "vuex";
 export default {
   name: "ProductPreview",
   props: {
@@ -83,17 +84,19 @@ export default {
     },
   },
   methods: {
+    ...mapActions("product", ["updateProductsItems"]),
+    ...mapActions("basket", ["addToBasket", "removeFromBasket"]),
+
     toggleProductFromBasket() {
       const product = {
         ...this.product,
         isInBasket: !this.product.isInBasket,
       };
 
-      if (product.isInBasket)
-        this.$store.dispatch("basket/addToBasket", this.product);
-      else this.$store.dispatch("basket/removeFromBasket", this.product);
+      if (product.isInBasket) this.addToBasket(this.product);
+      else this.removeFromBasket(this.product);
 
-      this.$store.dispatch("product/updateProductsItems", product);
+      this.updateProductsItems(product);
     },
   },
 };

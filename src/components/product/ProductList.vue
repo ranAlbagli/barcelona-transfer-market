@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import ProductPreview from "@/components/product/ProductPreview";
 
 export default {
@@ -17,7 +17,8 @@ export default {
     ...mapGetters("product", ["productItems"]),
   },
   created() {
-    this.$store.dispatch("product/getProductItems");
+    this.getProductItems();
   },
+  methods: { ...mapActions("product", ["getProductItems"]) },
 };
 </script>
