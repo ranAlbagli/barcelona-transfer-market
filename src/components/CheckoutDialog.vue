@@ -5,7 +5,7 @@
         <v-img src="../assets/messi_meme.jpg" />
         <v-divider></v-divider>
         <v-card-actions>
-          <v-spacer></v-spacer>
+          <v-spacer />
           <v-btn color="primary" text @click="show = false"> ok </v-btn>
         </v-card-actions>
       </v-card>
@@ -34,5 +34,3 @@ export default {
   },
 };
 </script>
-
-<style scoped></style>

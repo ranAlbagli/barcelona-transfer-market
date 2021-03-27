@@ -6,9 +6,6 @@ import basket from "./modules/basket";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
   modules: {
     product,
     basket,
