@@ -20,7 +20,7 @@
           >
             <template v-slot:item.title="{ item }">
               <td class="d-flex">
-                <v-img width="1.5" :src="item.avatar" />
+                <v-img max-width="80" :src="item.avatar" />
               </td>
             </template>
             <template v-slot:item.price="{ item }">
